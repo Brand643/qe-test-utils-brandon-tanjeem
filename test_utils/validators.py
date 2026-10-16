@@ -87,4 +87,8 @@ def all_pass(value, *checks):
     Example: all_pass("TC-001", is_valid_test_id, lambda s: s.endswith("1"))
     """
     # TODO: loop over `checks`; return False as soon as one fails; return True after the loop
-    pass
+    for check in checks:
+        if check(value) == False:
+            return False
+
+    return True
