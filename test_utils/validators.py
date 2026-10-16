@@ -48,11 +48,30 @@ def is_valid_email(email):
     return True
 
 
-def is_strong_password(password, min_length=8):
+def is_strong_password(password:str, min_length=8):
     """Return True if the password has at least `min_length` characters and
     contains at least one uppercase letter, one lowercase letter and one digit."""
     # TODO: loop over the characters with a flag per kind; .isupper() .islower() .isdigit()
-    pass
+    
+    if len(password) < min_length:
+        return False
+
+    upper_count = 0
+    lower_count = 0
+    digit_count = 0
+
+    for character in password:
+        if character.isupper():
+            upper_count += 1
+        elif character.islower():
+            lower_count += 1
+        elif character.isdigit():
+            digit_count += 1
+
+    if upper_count < 1 or lower_count < 1 or digit_count < 1:
+        return False
+
+    return True
 
 
 def is_valid_status_code(code):
