@@ -10,7 +10,11 @@ def is_in_range(value, low, high):
 def is_valid_test_id(test_id, prefix="TC", digits=3):
     """Return True for IDs like 'TC-007': the prefix, a dash, then exactly `digits` digits."""
     # TODO: check the start with .startswith, slice off the prefix, then .isdigit() and len()
-    pass
+    prefix_dash =f"{prefix}-"
+    if not test_id.startswith(prefix_dash):
+        return False
+    id_digit = test_id[len(prefix_dash):]
+    return id_digit.isdigit() and len(id_digit) == digits
 
 
 def is_valid_email(email):
