@@ -4,7 +4,7 @@
 def is_in_range(value, low, high):
     """Return True if low <= value <= high (both ends included)."""
     # TODO: one comparison; Python allows low <= value <= high
-    pass
+    return low <= value <= high
 
 
 def is_valid_test_id(test_id, prefix="TC", digits=3):
