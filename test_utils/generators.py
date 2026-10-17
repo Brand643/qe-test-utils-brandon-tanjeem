@@ -1,6 +1,7 @@
 """Data generators. Every generator accepts an optional `seed` so a failing test can be re-run
 with exactly the same data. Use a PRIVATE generator: rng = random.Random(seed)
 (never random.seed(...), which would change the global random state for everyone)."""
+
 import random
 import string
 
@@ -43,10 +44,14 @@ def generate_password(length=12, seed=None):
     FOR TEST DATA ONLY: random is not secure."""
     # TODO: rng; start with one upper, one lower, one digit; fill up with a loop; rng.shuffle; join
     rng = random.Random(seed)
-    password = [rng.choice(string.ascii_uppercase), rng.choice(string.ascii_lowercase), rng.choice(string.digits)]
+    password = [
+        rng.choice(string.ascii_uppercase),
+        rng.choice(string.ascii_lowercase),
+        rng.choice(string.digits),
+    ]
 
     while len(password) < length:
-        password.append(rng.choice(string.ascii_letters+string.digits))
+        password.append(rng.choice(string.ascii_letters + string.digits))
 
     rng.shuffle(password)
 
@@ -56,7 +61,10 @@ def generate_password(length=12, seed=None):
 def generate_test_id(number, prefix="TC", digits=3):
     """Return a zero-padded test ID: generate_test_id(7) -> 'TC-007'."""
     # TODO: str(number), then pad with '0' * (digits - len(text))
-    pass
+    number = str(number)
+
+    padded = "0" * (digits - len(number)) + number
+    return f"{prefix}-{padded}"
 
 
 def make_test_case(test_id, name, **options):
