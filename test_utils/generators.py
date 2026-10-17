@@ -11,7 +11,9 @@ STATUSES = ("New", "Passed", "Failed")
 def generate_username(prefix="user", length=4, seed=None):
     """Return a username like 'user4821': prefix followed by `length` random digits."""
     # TODO: rng = random.Random(seed); join rng.choice(string.digits) `length` times
-    pass
+    rng = random.Random(seed)
+    suffix = "".join(rng.choice(string.digits)*length)
+    return f"{prefix}{suffix}"
 
 
 def generate_usernames(count, seed=None):
