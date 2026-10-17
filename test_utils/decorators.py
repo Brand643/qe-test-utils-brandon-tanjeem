@@ -16,4 +16,16 @@ def timer(func):
     #   note the time after, append (func.__name__, elapsed) to TIMING_LOG, print the line,
     #   and `return result`. Finally `return wrapper` from timer.
     # Until you do this, timer returns func unchanged, so the checks will tell you nothing was timed.
-    return func
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        time_start = time.perf_counter()
+        result = func(*args, **kwargs)
+        time_end = time.perf_counter()
+        elapsed = time_end - time_start
+
+        TIMING_LOG.append((func.__name__, elapsed))
+        print(f"[timer] {func.__name__} took {elapsed:.4f} seconds")
+
+        return result
+    
+    return wrapper
