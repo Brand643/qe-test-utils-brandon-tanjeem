@@ -22,7 +22,7 @@ def build_demo_report(count=6, seed=7):
     cases = generate_test_cases(count, seed)
 
     slowest_case = slowest(cases)
-    lines.append(f"Slowest: {slowest_case["id"]} ({slowest_case["duration"]:.2f}) s")
+    lines.append(f"Slowest: {slowest_case["id"]} ({slowest_case["duration"]:.2f} s)")
 
     priority_counts = count_by(cases, "priority")
     priority_line = ", ".join(f"{name}={priority_counts[name]}" for name in sorted(priority_counts))
