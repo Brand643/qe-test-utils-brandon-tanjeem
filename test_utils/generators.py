@@ -74,7 +74,17 @@ def make_test_case(test_id, name, **options):
     make_test_case('TC-001', 'Login', priority='High', browser='Chrome') adds/overrides keys.
     """
     # TODO: build the defaults dict, then case.update(options); return case
-    pass
+    case = {
+        "id": test_id,
+        "name": name,
+        "priority": "Medium",
+        "status": "New",
+        "duration": 0.0,
+    }
+
+    case.update(options)
+
+    return case
 
 
 def generate_test_cases(count, seed=None):
