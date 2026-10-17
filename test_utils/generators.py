@@ -12,14 +12,29 @@ def generate_username(prefix="user", length=4, seed=None):
     """Return a username like 'user4821': prefix followed by `length` random digits."""
     # TODO: rng = random.Random(seed); join rng.choice(string.digits) `length` times
     rng = random.Random(seed)
-    suffix = "".join(rng.choice(string.digits)*length)
+    suffix = "".join(rng.choice(string.digits) for _ in range(length))
     return f"{prefix}{suffix}"
 
 
 def generate_usernames(count, seed=None):
     """Return a list of `count` UNIQUE usernames like 'user4821' (count must be 9000 or less)."""
     # TODO: rng + a list + a set `seen`; a while loop until you have `count` unique names
-    pass
+    if count > 9000:
+        return None
+
+    rng = random.Random(seed)
+    usernames = []
+    seen = set()
+
+    while len(usernames) < count:
+        suffix = "".join(rng.choice(string.digits) for _ in range(4))
+        username = "user" + suffix
+
+        if username not in seen:
+            seen.add(username)
+            usernames.append(username)
+
+    return usernames
 
 
 def generate_password(length=12, seed=None):
