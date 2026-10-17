@@ -94,4 +94,22 @@ def generate_test_cases(count, seed=None):
     duration is a random value from 0.10 to 5.00 seconds (2 decimals).
     """
     # TODO: rng = random.Random(seed); loop number in range(1, count + 1); reuse generate_test_id and make_test_case
-    pass
+    rng = random.Random(seed)
+    test_cases = []
+
+    for number in range(1, count + 1):
+        test_id = generate_test_id(number)
+        priority = rng.choice(PRIORITIES)
+        status = rng.choice(STATUSES)
+        duration = round(rng.uniform(0.10, 5.00), 2)
+
+        test_case = make_test_case(
+            test_id,
+            f"Test case {number}",
+            priority=priority,
+            status=status,
+            duration=duration,
+        )
+        test_cases.append(test_case)
+
+    return test_cases
