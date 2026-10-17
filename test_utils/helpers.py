@@ -20,4 +20,6 @@ def slowest(cases):
 def count_by(cases, field):
     """Return a plain dict counting cases per value of `field`: {'High': 2, 'Low': 1}."""
     # TODO: Counter over the field values, then dict(...) of it
-    pass
+    count = Counter(case[field] for case in cases)
+    return dict(count)
+    
