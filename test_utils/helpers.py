@@ -5,7 +5,7 @@ from collections import Counter
 def sort_cases(cases, field, reverse=False):
     """Return a NEW list sorted by `field` (e.g. 'duration'). The original list is not changed."""
     # TODO: sorted(cases, key=lambda case: case[field], reverse=reverse)
-    pass
+    return sorted(cases, key=lambda case: case[field], reverse=reverse)
 
 
 def slowest(cases):
