@@ -42,7 +42,15 @@ def generate_password(length=12, seed=None):
     that always contains an uppercase letter, a lowercase letter and a digit.
     FOR TEST DATA ONLY: random is not secure."""
     # TODO: rng; start with one upper, one lower, one digit; fill up with a loop; rng.shuffle; join
-    pass
+    rng = random.Random(seed)
+    password = [rng.choice(string.ascii_uppercase), rng.choice(string.ascii_lowercase), rng.choice(string.digits)]
+
+    while len(password) < length:
+        password.append(rng.choice(string.ascii_letters+string.digits))
+
+    rng.shuffle(password)
+
+    return "".join(password)
 
 
 def generate_test_id(number, prefix="TC", digits=3):
