@@ -1,7 +1,7 @@
 # Pair Retrospective: test_utils library
 
 - Pair members: Md Tanjeem Haider, Brandon Wong
-- Repository / branch / PR link: [github.com/Brand643/qe-test-utils-brandon-tanjeem](https://github.com/Brand643/qe-test-utils-brandon-tanjeem) / [github.com/Brand643/qe-test-utils-brandon-tanjeem/tree/feature/test-utils](https://github.com/Brand643/qe-test-utils-brandon-tanjeem/tree/feature/test-utils) / [Add Pr link here]
+- Repository / branch / PR link: [Repository](https://github.com/Brand643/qe-test-utils-brandon-tanjeem) / [Branch](https://github.com/Brand643/qe-test-utils-brandon-tanjeem/tree/feature/test-utils) / [Pull Request](https://github.com/Brand643/qe-test-utils-brandon-tanjeem/pull/1)
 - Date and total time spent: 150 minutes
 
 ## 1. Role-swap log
