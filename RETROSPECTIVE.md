@@ -1,9 +1,5 @@
 # Pair Retrospective: test_utils library
 
-Copy this file to the ROOT of your shared repo as `RETROSPECTIVE.md`, fill in EVERY section
-(replace each `[WRITE HERE]`), and commit it on your shared branch. Write it together:
-one person types, the other dictates, then swap for the last two sections.
-
 - Pair members: Md Tanjeem Haider, Brandon Wong
 - Repository / branch / PR link: [github.com/Brand643/qe-test-utils-brandon-tanjeem](https://github.com/Brand643/qe-test-utils-brandon-tanjeem) / [github.com/Brand643/qe-test-utils-brandon-tanjeem/tree/feature/test-utils](https://github.com/Brand643/qe-test-utils-brandon-tanjeem/tree/feature/test-utils) / [Add Pr link here]
 - Date and total time spent: 150 minutes
@@ -32,7 +28,7 @@ We caught each other’s errors early. For example, while implementing `timer`, 
 ## 4. What did each of us learn from the other?
 
 - Md Tanjeem Haider learned from Brandon Wong: I learned to talk through the plan out loud before committing to it. That made it easier for the navigator to understand my approach, guide me when I was heading the wrong way, and catch anything I had overlooked in my thinking.
-- [Name 2] learned from [Name 1]: [WRITE HERE]
+- Brandon Wong learned from Md Tanjeem Haider: I learned how to write a for loop in one line, which makes my code shorter and more concise.
 
 ## 5. Our code
 
@@ -42,15 +38,18 @@ We caught each other’s errors early. For example, while implementing `timer`, 
 
 ## 6. Git collaboration
 
-- Did every swap follow commit, push, pull? What went wrong when we skipped a step? [WRITE HERE]
-- Did we get a merge conflict? How did we resolve it (or why not)? [WRITE HERE]
-- Output of `git shortlog -sne` (paste): [WRITE HERE]
+- Did every swap follow commit, push, pull? What went wrong when we skipped a step? Not every swap followed it perfectly. On at least one swap we skipped the pull before the new driver started typing, so the incoming driver was working from an older version and the check results did not match what the outgoing driver had just seen. Nothing was lost, but we had to stop, pull, and re-run the check before carrying on, which cost a few minutes and broke the flow. After that we stuck to the routine: outgoing driver runs the check, commits, pushes, and the incoming driver pulls before making any changes.
+- Did we get a merge conflict? How did we resolve it (or why not)? We did not get a merge conflict because after one swap where we skipped the pull, we stuck strictly to commit, push, pull at every swap. The incoming driver always pulled before typing, so both of us worked from the same version and git never had two different edits to merge.
+- Output of `git shortlog -sne` (paste): 11  Brandon Wong <brandonwong643@gmail.com>
+       5  Md Tanjeem Haider <tanjeemhaider@gmail.com>
+       3  MdTanjeemHaider <tanjeemhaider@gmail.com>
+       1  Brand643 <146497233+Brand643@users.noreply.github.com>
 
 ## 7. Next time
 
-- Two things we would do differently: [WRITE HERE]
-- Self-rating, 1 (poor) to 5 (excellent): communication [WRITE HERE], keeping to the swap timer [WRITE HERE], understanding every line [WRITE HERE]
+- Two things we would do differently: We would read the whole spec first before starting to type, instead of jumping straight into the functions one at a time. Also, we would test a few edge cases of our own next to the check script, since passing the provided checks was not the same as matching what the spec actually asked for.
+- Self-rating, 1 (poor) to 5 (excellent): communication 4, keeping to the swap timer 4, understanding every line 5
 
 ## 8. Final check
 
-Paste the last lines of `python3 check_exercise.py` (the "x/y checks passed" line): [WRITE HERE]
+Paste the last lines of `python3 check_exercise.py` (the "x/y checks passed" line): `20/20 checks passed ALL CHECKS PASSED: library, report and files are in place. Now finish the Definition of Done.`
